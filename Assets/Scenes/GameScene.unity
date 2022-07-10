@@ -11031,6 +11031,12 @@ PrefabInstance:
       objectReference: {fileID: 15173670}
     - target: {fileID: 2091627023862276641, guid: 34f920dd44cadde498b42c981fe07603,
         type: 3}
+      propertyPath: _comingsoon
+      value: 
+      objectReference: {fileID: 4179060356115011494, guid: ec45b85d69f0008428aba3be61277739,
+        type: 3}
+    - target: {fileID: 2091627023862276641, guid: 34f920dd44cadde498b42c981fe07603,
+        type: 3}
       propertyPath: _gameoverplan
       value: 
       objectReference: {fileID: 1694968830}
@@ -11162,6 +11168,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Portal
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563279118407959751, guid: 86c873a22e59a244f936e90a87f1b439,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86c873a22e59a244f936e90a87f1b439, type: 3}
