@@ -18,24 +18,12 @@ public class PlayerController : MonoBehaviour
     private int remaingDuration;
     private int _count;
     [SerializeField] private GameObject _gameoverplan;
-    //[SerializeField] private GameObject _pickablekey;
+    [SerializeField] private GameObject _portal;
  
     private void Awake()
     {
         rigidbody2d = transform.GetComponent<Rigidbody2D>();
         boxCollider2d = transform.GetComponent<BoxCollider2D>();
-
-/*
-         for (int i = 0; i < 21; i++)
-         {
-             Instantiate(_pickablekey, RandomPos(), Quaternion.identity);
-         }
-        
-        if (_pickablekey.gameObject.CompareTag("Platform"))
-        {
-            _pickablekey.gameObject.SetActive(false);
-        }
-*/
 
     }
     public void Start()
@@ -112,10 +100,15 @@ public class PlayerController : MonoBehaviour
     void SetCountScore()
     {
         countScore.text = "Score : " + _count.ToString();
-        if (_count >= 210)
+        if (_count >= 160)
         {
+            _portal.SetActive(true);
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            SceneManager.LoadScene(2);
+            //SceneManager.LoadScene(2);
+        }
+        else
+        {
+            _portal.SetActive(false);
         }
     }
 
@@ -142,19 +135,10 @@ public class PlayerController : MonoBehaviour
             _count = _count + 10;
             SetCountScore();
         }
+        if (other.gameObject.CompareTag("Portal"))
+        {
+            other.gameObject.SetActive(false);
+            SceneManager.LoadScene(2);
+        }
     }
-/*
-    private Vector3 RandomPos()
-    {
-        int x, z;
-        float y;
-
-        x = Random.Range(-10, 123);
-        z = 0;
-        y = Random.Range(1, 12.25f);
-
-        return new Vector3(x, y, z);
-
-    }
-*/
 }

@@ -13,16 +13,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject PausedMenu;
     [SerializeField] private GameObject Timeleft;
     [SerializeField] private Animator _animator;
-    [SerializeField] private GameObject _pickablekey;
+    [SerializeField] private GameObject _portal;
 
-    void Start()
+
+    private void Start()
     {
         PausedMenu.SetActive(false);
     }
 
-    void Update()
+    private void Update()
     {
-        _pickablekey.gameObject.transform.Rotate(new Vector3(0, 0, 180) * Time.deltaTime * 3f);
+        _portal.gameObject.transform.Rotate(new Vector3(0, 0, 360) * Time.deltaTime * .40f);
 
         if (_player.gameObject.transform.position.y < -8)
         {
@@ -55,7 +56,8 @@ public class GameManager : MonoBehaviour
     public void PlayAgain()
     {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-        SceneManager.LoadScene(1);
+        //SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void Pause()
@@ -77,6 +79,7 @@ public class GameManager : MonoBehaviour
     }
 
     #endregion
+
 
 
 }

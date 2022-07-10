@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - PickableKey
   - Platform
+  - Portal
   layers:
   - Default
   - TransparentFX
