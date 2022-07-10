@@ -9,6 +9,8 @@ TagManager:
   - PickableKey
   - Platform
   - Portal
+  - PickableRoyalKey
+  - Portal2
   layers:
   - Default
   - TransparentFX

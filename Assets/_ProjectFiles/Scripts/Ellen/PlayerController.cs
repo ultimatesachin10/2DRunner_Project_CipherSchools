@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private int _count;
     [SerializeField] private GameObject _gameoverplan;
     [SerializeField] private GameObject _portal;
+    [SerializeField] private GameObject _comingsoon;
  
     private void Awake()
     {
@@ -139,6 +140,23 @@ public class PlayerController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             SceneManager.LoadScene(2);
+        }
+        if (other.gameObject.CompareTag("PickableRoyalKey"))
+        {
+            other.gameObject.SetActive(false);
+            _count = _count + 10;
+            SetCountScore();
+        }
+        if (other.gameObject.CompareTag("Portal2"))
+        {
+            other.gameObject.SetActive(false);
+            //SceneManager.LoadScene(2);
+            _comingsoon.SetActive(true);
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            _comingsoon.SetActive(false);
         }
     }
 }
